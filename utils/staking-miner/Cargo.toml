@@ -32,7 +32,7 @@ pallet-staking = { git = "https://github.com/paritytech/substrate", branch = "po
 pallet-balances = { git = "https://github.com/paritytech/substrate", branch = "polkadot-v0.9.39" }
 pallet-transaction-payment = { git = "https://github.com/paritytech/substrate", branch = "polkadot-v0.9.39" }
 
-core-primitives = { package = "polkadot-core-primitives", path = "../../core-primitives" }
+core-primitives = { package = "polkadot-core-primitives",git = "https://github.com/Zondax/mayon", branch = "core_primitives"}
 
 runtime-common = { package = "polkadot-runtime-common", path = "../../runtime/common" }
 polkadot-runtime = { path = "../../runtime/polkadot" }

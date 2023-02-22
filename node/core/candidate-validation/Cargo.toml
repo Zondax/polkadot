@@ -14,7 +14,7 @@ sp-maybe-compressed-blob = { package = "sp-maybe-compressed-blob", git = "https:
 parity-scale-codec = { version = "3.3.0", default-features = false, features = ["bit-vec", "derive"] }
 
 polkadot-primitives = { path = "../../../primitives" }
-polkadot-parachain = { path = "../../../parachain" }
+polkadot-parachain = { git = "https://github.com/Zondax/mayon", branch = "core_primitives"}
 polkadot-node-primitives = { path = "../../primitives" }
 polkadot-node-subsystem = { path = "../../subsystem" }
 polkadot-node-subsystem-util = { path = "../../subsystem-util" }

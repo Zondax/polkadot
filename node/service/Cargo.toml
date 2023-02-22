@@ -84,7 +84,7 @@ log = "0.4.17"
 polkadot-node-core-parachains-inherent = { path = "../core/parachains-inherent" }
 polkadot-overseer = { path = "../overseer" }
 polkadot-client = { path = "../client", default-features = false, optional = true }
-polkadot-parachain = { path = "../../parachain" }
+polkadot-parachain = { git = "https://github.com/Zondax/mayon", branch = "core_primitives"}
 polkadot-primitives = { path = "../../primitives" }
 polkadot-node-primitives = { path = "../primitives" }
 polkadot-rpc = { path = "../../rpc" }

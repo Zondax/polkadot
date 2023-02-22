@@ -33,12 +33,12 @@ nix = { version = "0.26.1", features = ["signal"] }
 tempfile = "3.2.0"
 tokio = "1.24.2"
 substrate-rpc-client = { git = "https://github.com/paritytech/substrate", branch = "polkadot-v0.9.39" }
-polkadot-core-primitives = { path = "core-primitives" }
+polkadot-core-primitives = { git = "https://github.com/Zondax/mayon", branch = "core_primitives"}
 
 [workspace]
 members = [
 	"cli",
-	"core-primitives",
+	# "core-primitives",
 	"erasure-coding",
 	"primitives",
 	"primitives/test-helpers",
@@ -109,7 +109,7 @@ members = [
 	"node/test/service",
 	"node/zombienet-backchannel",
 	"rpc",
-	"parachain",
+	# "parachain",
 	"parachain/test-parachains",
 	"parachain/test-parachains/adder",
 	"parachain/test-parachains/adder/collator",

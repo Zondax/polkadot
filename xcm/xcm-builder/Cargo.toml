@@ -21,7 +21,7 @@ pallet-transaction-payment = { git = "https://github.com/paritytech/substrate", 
 log = { version = "0.4.17", default-features = false }
 
 # Polkadot dependencies
-polkadot-parachain = { path = "../../parachain", default-features = false }
+polkadot-parachain = { git = "https://github.com/Zondax/mayon", branch = "core_primitives", default-features = false }
 
 [dev-dependencies]
 primitive-types = "0.12.1"
