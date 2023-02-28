@@ -15,7 +15,7 @@ tokio = "1.24.2"
 # Polkadot dependencies
 polkadot-overseer = { path = "../../overseer" }
 polkadot-primitives = { path = "../../../primitives" }
-polkadot-parachain = { git = "https://github.com/Zondax/mayon", branch = "core_primitives"}
+polkadot-parachain = { git = "https://github.com/Zondax/mayon", branch = "main"}
 polkadot-rpc = { path = "../../../rpc" }
 polkadot-runtime-common = { path = "../../../runtime/common" }
 polkadot-service = { path = "../../service" }

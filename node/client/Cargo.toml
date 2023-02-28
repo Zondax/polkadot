@@ -45,8 +45,7 @@ kusama-runtime = { path = "../../runtime/kusama", optional = true }
 westend-runtime = { path = "../../runtime/westend", optional = true }
 rococo-runtime = { path = "../../runtime/rococo", optional = true }
 
-# polkadot-parachain = { git = "https://github.com/Zondax/mayon", branch = "core_primitives"}
-polkadot-core-primitives = { git = "https://github.com/Zondax/mayon", branch = "core_primitives"}
+polkadot-core-primitives = { git = "https://github.com/Zondax/mayon", branch = "main"}
 polkadot-primitives = { path = "../../primitives" }
 polkadot-node-core-parachains-inherent = { path = "../core/parachains-inherent" }
 polkadot-runtime-common = { path = "../../runtime/common" }

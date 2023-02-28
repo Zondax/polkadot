@@ -4845,6 +4845,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "nix-build"
+version = "0.1.0"
+source = "git+https://github.com/Zondax/mayon?branch=main#1cb2af1e9cd86152cf343133d0201c157709a3a2"
+dependencies = [
+ "which",
+]
+
+[[package]]
 name = "nohash-hasher"
 version = "0.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -6612,11 +6620,12 @@ dependencies = [
 [[package]]
 name = "polkadot-core-primitives"
 version = "0.9.37"
-source = "git+https://github.com/Zondax/mayon?branch=core_primitives#9d1989c9247a6d8116d0aac7310db6acf4b7e632"
+source = "git+https://github.com/Zondax/mayon?branch=main#1cb2af1e9cd86152cf343133d0201c157709a3a2"
 dependencies = [
  "cmake",
  "cxx",
  "cxx-build",
+ "nix-build",
  "parity-scale-codec",
  "runtime",
  "scale-info",
@@ -7273,13 +7282,14 @@ dependencies = [
 [[package]]
 name = "polkadot-parachain"
 version = "0.1.0"
-source = "git+https://github.com/Zondax/mayon?branch=core_primitives#9d1989c9247a6d8116d0aac7310db6acf4b7e632"
+source = "git+https://github.com/Zondax/mayon?branch=main#1cb2af1e9cd86152cf343133d0201c157709a3a2"
 dependencies = [
  "cmake",
  "cxx",
  "cxx-build",
  "derive_more",
  "frame-support",
+ "nix-build",
  "parity-scale-codec",
  "polkadot-core-primitives",
  "scale-info",
@@ -8837,12 +8847,13 @@ dependencies = [
 [[package]]
 name = "runtime"
 version = "0.1.0"
-source = "git+https://github.com/Zondax/mayon?branch=core_primitives#9d1989c9247a6d8116d0aac7310db6acf4b7e632"
+source = "git+https://github.com/Zondax/mayon?branch=main#1cb2af1e9cd86152cf343133d0201c157709a3a2"
 dependencies = [
  "cmake",
  "cxx",
  "cxx-build",
  "log",
+ "nix-build",
  "parity-scale-codec",
  "scale-info",
  "serde",

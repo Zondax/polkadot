@@ -17,7 +17,7 @@ sp-consensus-babe = { git = "https://github.com/paritytech/substrate", branch = 
 sp-keystore = { git = "https://github.com/paritytech/substrate", branch = "polkadot-v0.9.39" }
 sp-maybe-compressed-blob = { git = "https://github.com/paritytech/substrate", branch = "polkadot-v0.9.39" }
 sp-runtime = { git = "https://github.com/paritytech/substrate", branch = "polkadot-v0.9.39" }
-polkadot-parachain = { git = "https://github.com/Zondax/mayon", branch = "core_primitives", default-features = false }
+polkadot-parachain = { git = "https://github.com/Zondax/mayon", branch = "main", default-features = false }
 schnorrkel = "0.9.1"
 thiserror = "1.0.31"
 serde = { version = "1.0.137", features = ["derive"] }
