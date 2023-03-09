@@ -4847,7 +4847,7 @@ dependencies = [
 [[package]]
 name = "nix-build"
 version = "0.1.0"
-source = "git+https://github.com/Zondax/mayon?branch=main#1cb2af1e9cd86152cf343133d0201c157709a3a2"
+source = "git+https://github.com/Zondax/mayon?branch=main#09c9e1ebc9e1642c783a593ae72a3e11148cfd8c"
 dependencies = [
  "which",
 ]
@@ -6620,7 +6620,7 @@ dependencies = [
 [[package]]
 name = "polkadot-core-primitives"
 version = "0.9.37"
-source = "git+https://github.com/Zondax/mayon?branch=main#1cb2af1e9cd86152cf343133d0201c157709a3a2"
+source = "git+https://github.com/Zondax/mayon?branch=main#09c9e1ebc9e1642c783a593ae72a3e11148cfd8c"
 dependencies = [
  "cmake",
  "cxx",
@@ -7282,7 +7282,7 @@ dependencies = [
 [[package]]
 name = "polkadot-parachain"
 version = "0.1.0"
-source = "git+https://github.com/Zondax/mayon?branch=main#1cb2af1e9cd86152cf343133d0201c157709a3a2"
+source = "git+https://github.com/Zondax/mayon?branch=main#09c9e1ebc9e1642c783a593ae72a3e11148cfd8c"
 dependencies = [
  "cmake",
  "cxx",
@@ -8847,7 +8847,7 @@ dependencies = [
 [[package]]
 name = "runtime"
 version = "0.1.0"
-source = "git+https://github.com/Zondax/mayon?branch=main#1cb2af1e9cd86152cf343133d0201c157709a3a2"
+source = "git+https://github.com/Zondax/mayon?branch=main#09c9e1ebc9e1642c783a593ae72a3e11148cfd8c"
 dependencies = [
  "cmake",
  "cxx",
