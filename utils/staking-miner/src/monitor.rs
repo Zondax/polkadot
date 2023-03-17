@@ -210,7 +210,7 @@ macro_rules! monitor_cmd_for { ($runtime:tt) => { paste::paste! {
 		async fn send_and_watch_extrinsic(
 			rpc: SharedRpcClient,
 			tx: mpsc::UnboundedSender<StakingMinerError>,
-			at: Header,
+			at: impl HeaderT<Number = BlockNumber, Hash = Hash>,
 			signer: Signer,
 			config: MonitorConfig,
 		) {
@@ -226,7 +226,7 @@ macro_rules! monitor_cmd_for { ($runtime:tt) => { paste::paste! {
 			}
 
 			let hash = at.hash();
-			log::trace!(target: LOG_TARGET, "new event at #{:?} ({:?})", at.number, hash);
+			log::trace!(target: LOG_TARGET, "new event at #{:?} ({:?})", at.number(), hash);
 
 			// block on this because if this fails there is no way to recover from
 			// that error i.e, upgrade/downgrade required.
@@ -251,14 +251,14 @@ macro_rules! monitor_cmd_for { ($runtime:tt) => { paste::paste! {
 
 			// Run the calls in parallel and return once all has completed or any failed.
 			if let Err(err) = tokio::try_join!(flatten(signed_phase_fut), flatten(no_prev_sol_fut)) {
-				log::debug!(target: LOG_TARGET, "Skipping block {}; {}", at.number, err);
+				log::debug!(target: LOG_TARGET, "Skipping block {}; {}", at.number(), err);
 				return;
 			}
 
 			let mut ext = match crate::create_election_ext::<Runtime, Block>(rpc.clone(), Some(hash), vec![]).await {
 				Ok(ext) => ext,
 				Err(err) => {
-					log::debug!(target: LOG_TARGET, "Skipping block {}; {}", at.number, err);
+					log::debug!(target: LOG_TARGET, "Skipping block {}; {}", at.number(), err);
 					return;
 				}
 			};
@@ -288,7 +288,7 @@ macro_rules! monitor_cmd_for { ($runtime:tt) => { paste::paste! {
 
 			let tip = 0 as Balance;
 			let period = <Runtime as frame_system::Config>::BlockHashCount::get() / 2;
-			let current_block = at.number.saturating_sub(1);
+			let current_block = at.number().saturating_sub(1);
 			let era = sp_runtime::generic::Era::mortal(period.into(), current_block.into());
 
 			log::trace!(
@@ -306,7 +306,7 @@ macro_rules! monitor_cmd_for { ($runtime:tt) => { paste::paste! {
 			let latest_head = match get_latest_head::<Runtime>(&rpc, &config.listen).await {
 				Ok(hash) => hash,
 				Err(e) => {
-					log::debug!(target: LOG_TARGET, "Skipping to submit at block {}; {}", at.number, e);
+					log::debug!(target: LOG_TARGET, "Skipping to submit at block {}; {}", at.number(), e);
 					return;
 				}
 			};
@@ -330,7 +330,7 @@ macro_rules! monitor_cmd_for { ($runtime:tt) => { paste::paste! {
 				flatten(ensure_strategy_met_fut),
 				flatten(ensure_signed_phase_fut),
 			) {
-				log::debug!(target: LOG_TARGET, "Skipping to submit at block {}; {}", at.number, err);
+				log::debug!(target: LOG_TARGET, "Skipping to submit at block {}; {}", at.number(), err);
 				return;
 			}
 
@@ -351,7 +351,7 @@ macro_rules! monitor_cmd_for { ($runtime:tt) => { paste::paste! {
 					log::warn!(
 						target: LOG_TARGET,
 						"failing to submit a transaction {:?}. ignore block: {}",
-						why, at.number
+						why, at.number()
 					);
 					return;
 				},
@@ -390,7 +390,7 @@ macro_rules! monitor_cmd_for { ($runtime:tt) => { paste::paste! {
 							// Decoding or other RPC error => just terminate the task.
 							Err(e) => {
 								log::warn!(target: LOG_TARGET, "get_storage [key: {:?}, hash: {:?}] failed: {:?}; skip block: {}",
-									key, hash, e, at.number
+									key, hash, e, at.number()
 								);
 								return;
 							}
