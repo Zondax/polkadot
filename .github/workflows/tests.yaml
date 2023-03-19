@@ -1,0 +1,23 @@
+name: Run workspace tests
+on:
+  - push
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: polkadot-mayon
+
+jobs:
+  docker:
+    uses: ./.github/workflows/mayon-docker.yaml
+
+  checks:
+    needs: [docker]
+    runs-on: ubuntu-latest
+    container:
+      image: ${{ env.REGISTRY }}/${{ github.repository_owner }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Run tests
+        run: |
+          cargo test --workspace --release
