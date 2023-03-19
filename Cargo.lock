@@ -4878,7 +4878,7 @@ dependencies = [
 [[package]]
 name = "nix-build"
 version = "0.1.0"
-source = "git+https://github.com/Zondax/mayon?branch=update#c90f60586873602d5ff03ed57121251cadd5594f"
+source = "git+https://github.com/Zondax/mayon?branch=main#bfb7f1da367f7dc7fa270927a8efeeae5c29fc8a"
 dependencies = [
  "which",
 ]
@@ -6666,7 +6666,7 @@ dependencies = [
 [[package]]
 name = "polkadot-core-primitives"
 version = "0.9.39"
-source = "git+https://github.com/Zondax/mayon?branch=update#c90f60586873602d5ff03ed57121251cadd5594f"
+source = "git+https://github.com/Zondax/mayon?branch=main#bfb7f1da367f7dc7fa270927a8efeeae5c29fc8a"
 dependencies = [
  "cmake",
  "cxx",
@@ -7348,7 +7348,7 @@ dependencies = [
 [[package]]
 name = "polkadot-parachain"
 version = "0.9.39"
-source = "git+https://github.com/Zondax/mayon?branch=update#c90f60586873602d5ff03ed57121251cadd5594f"
+source = "git+https://github.com/Zondax/mayon?branch=main#bfb7f1da367f7dc7fa270927a8efeeae5c29fc8a"
 dependencies = [
  "bounded-collections",
  "cmake",
@@ -8903,7 +8903,7 @@ dependencies = [
 [[package]]
 name = "runtime"
 version = "0.9.39"
-source = "git+https://github.com/Zondax/mayon?branch=update#c90f60586873602d5ff03ed57121251cadd5594f"
+source = "git+https://github.com/Zondax/mayon?branch=main#bfb7f1da367f7dc7fa270927a8efeeae5c29fc8a"
 dependencies = [
  "cmake",
  "cxx",
@@ -11783,10 +11783,87 @@ dependencies = [
 ]
 
 [[package]]
+name = "test-parachain-adder-collator"
+version = "0.9.39-1"
+dependencies = [
+ "clap 4.0.15",
+ "futures",
+ "futures-timer",
+ "log",
+ "parity-scale-codec",
+ "polkadot-cli",
+ "polkadot-node-core-pvf",
+ "polkadot-node-primitives",
+ "polkadot-node-subsystem",
+ "polkadot-parachain 0.9.39",
+ "polkadot-primitives",
+ "polkadot-service",
+ "polkadot-test-service",
+ "sc-cli",
+ "sc-service",
+ "sp-core",
+ "sp-keyring",
+ "substrate-test-utils",
+ "test-parachain-adder",
+ "tokio",
+]
+
+[[package]]
 name = "test-parachain-halt"
 version = "0.9.39-1"
 dependencies = [
  "substrate-wasm-builder",
+]
+
+[[package]]
+name = "test-parachain-undying"
+version = "0.9.39-1"
+dependencies = [
+ "dlmalloc",
+ "log",
+ "parity-scale-codec",
+ "polkadot-parachain 0.9.39",
+ "sp-io",
+ "sp-std",
+ "substrate-wasm-builder",
+ "tiny-keccak",
+]
+
+[[package]]
+name = "test-parachain-undying-collator"
+version = "0.9.39-1"
+dependencies = [
+ "clap 4.0.15",
+ "futures",
+ "futures-timer",
+ "log",
+ "parity-scale-codec",
+ "polkadot-cli",
+ "polkadot-node-core-pvf",
+ "polkadot-node-primitives",
+ "polkadot-node-subsystem",
+ "polkadot-parachain 0.9.39",
+ "polkadot-primitives",
+ "polkadot-service",
+ "polkadot-test-service",
+ "sc-cli",
+ "sc-service",
+ "sp-core",
+ "sp-keyring",
+ "substrate-test-utils",
+ "test-parachain-undying",
+ "tokio",
+]
+
+[[package]]
+name = "test-parachains"
+version = "0.9.39-1"
+dependencies = [
+ "parity-scale-codec",
+ "sp-core",
+ "test-parachain-adder",
+ "test-parachain-halt",
+ "tiny-keccak",
 ]
 
 [[package]]
