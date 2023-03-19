@@ -9,5 +9,3 @@ ENV USER=nonroot
 RUN curl -L https://nixos.org/nix/install | sh
 
 ENV PATH="/home/nonroot/.nix-profile/bin:${PATH}"
-
-ENTRYPOINT bash
