@@ -21,17 +21,17 @@
 //! needing to sprinkle `any_runtime` in a few extra places.
 
 /// The account id type.
-pub type AccountId = core_primitives::AccountId;
+pub type AccountId = polkadot_core_primitives::AccountId;
 /// The block number type.
-pub type BlockNumber = core_primitives::BlockNumber;
+pub type BlockNumber = polkadot_core_primitives::BlockNumber;
 /// The balance type.
-pub type Balance = core_primitives::Balance;
+pub type Balance = polkadot_core_primitives::Balance;
 /// The index of an account.
-pub type Index = core_primitives::AccountIndex;
+pub type Index = polkadot_core_primitives::AccountIndex;
 /// The hash type. We re-export it here, but we can easily get it from block as well.
-pub type Hash = core_primitives::Hash;
+pub type Hash = polkadot_core_primitives::Hash;
 /// The header type. We re-export it here, but we can easily get it from block as well.
-pub type Header = core_primitives::Header;
+pub type Header = polkadot_core_primitives::Header;
 
 pub use sp_runtime::traits::{Block as BlockT, Header as HeaderT};
 
