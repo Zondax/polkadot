@@ -35,6 +35,10 @@ tokio = "1.24.2"
 substrate-rpc-client = { git = "https://github.com/paritytech/substrate", branch = "polkadot-v0.9.39" }
 polkadot-core-primitives = { git = "https://github.com/Zondax/mayon", branch = "main"}
 
+[workspace.dependencies]
+polkadot-core-primitives = { git = "https://github.com/Zondax/mayon", branch = "main", default-features = false}
+polkadot-parachain = { git = "https://github.com/Zondax/mayon", branch = "main", default-features = false}
+
 [workspace]
 members = [
 	"cli",
